@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+</head>
+<style>
+    label {
+        width: 200px;
+        display: inline-block;
+        text-align: left;
+    }
+</style>
+<body>
+<div style="border: solid 1px; position: absolute; width: 400px; height: 300px; top: 50%; left: 50%; margin-top: -200px; margin-left: -200px;">
+    <div
+            style="border: solid 0px; position: absolute; background-color: grey; width: 400px; height: 40px;">
+        <p style="position: absolute; top: -10%; left: 40%;">Login</p>
+    </div>
+    <form onsubmit="return login()" action="MathQuestion1.html">
+        <div style="position: absolute; top: 29%; right: 50%; width: 25%; float: right">
+
+            <label>Username :</label>
+            <p>
+                <input type="text" id="username" style="font-size: 14pt">
+            </p>
+            <label>Password :</label>
+            <p>
+                <input type="password" id="password" style="font-size: 14pt">
+            </p>
+
+        </div>
+        <div style="position: absolute; top: 75%; right: 60%; width: 25%; float: right">
+            <p style="color: blue">Create Account or Forgot?</p>
+        </div>
+        <div style="position: absolute; top: 80%; right: 20%; width: 25%; float: right; border: solid 1px;">
+            <input type="submit" name="commit" style="height: 60px; width: 100px;">
+        </div>
+    </form>
+    <script>
+        function login() {
+            var username = document.getElementById("username").value;
+            var password = document.getElementById("password").value;
+            if(username=="" && password=="") {
+
+                return true;
+            }
+            else
+                return false;
+        }
+    </script>
+</div>
+</body>
+</html>

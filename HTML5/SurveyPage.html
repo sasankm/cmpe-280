@@ -1,0 +1,67 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+
+</head>
+<style>
+    label,
+    textarea{
+        display:inline-block;
+        vertical-align:text-top;
+    }
+</style>
+<body>
+<div style="border: solid 1px; position: absolute; width: 800px; height: 500px; top: 50%; left: 20%; margin-top: -200px; margin-left: -100px;">
+    <div style="border: solid 0px; position: absolute; background-color: grey; width: 800px; height: 40px;">
+        <p style="position: absolute; top: -10%; left: 45%;">Survey</p>
+    </div>
+
+    <div style=" position: absolute;  width: 700px; height: 100px; top: 55%; left: 20%;margin-top: -200px; margin-left: -100px;  float:left ">
+        <p>How did you like the center?</p>
+        <label for="comments">Comments:</label>
+        <textarea id="comments" cols="50" rows="5" style="overflow:scroll;"></textarea>
+    </div>
+
+    <div style="position:absolute;left: 8%; float:left; top:50%">
+        <label>Select Text Area Location:</label>
+    </div>
+    <div style="position:absolute;left: 8%; float:left; top:55%">
+        <label>City:</label>
+        <select>
+            <option value="San Jose">San Jose</option>
+            <option value="Los Angeles">Los Angeles</option>
+            <option value="Seattle">Seattle</option>
+            <option value="Houston">Houston</option>
+            <option value="San Diego">San Diego</option>
+        </select>
+    </div>
+
+    <div style="position:absolute;left: 8%; float:left; top:75%">
+        <button type="submit" style="width: 70%" onclick="SummaryPage()" value="Submit">Submit & Get Score</button>
+    </div>
+
+    <div style="position:absolute;  right:35%;float:right; top:55%">
+        <label>Room Number#</label>
+        <select>
+            <option value="room1">Room 337</option>
+            <option value="room2">Room 210</option>
+            <option value="room3">Room 110</option>
+            <option value="room4">Room 410</option>
+        </select>
+    </div>
+
+    <div style="position:absolute; right:40%; float:right; top:75%">
+        <button type="submit" style="width: 70%" onclick="SummaryPage()" value="Submit">Skip & Get Score</button>
+    </div>
+
+    <script>
+        function SummaryPage() {
+            var abc = window.location.href;
+            var points = abc.substring(abc.indexOf("=")+1);
+            window.location.assign("SummaryPage.html?points="+points);
+        }
+    </script>
+
+</div>
+</body>
+</html>

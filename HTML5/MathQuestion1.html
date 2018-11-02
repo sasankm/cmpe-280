@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <script src="http://fred-wang.github.io/mathml.css/mspace.js"></script>
+</head>
+<body>
+
+<div
+        style="border: solid 1px; position: absolute; width: 1000px; height: 500px; top: 50%; left: 20%; margin-top: -200px; margin-left: -100px;">
+    <div
+            style="border: solid 0px; position: absolute; background-color: grey; width: 1000px; height: 40px;">
+        <p style="position: absolute; top: -10%; left: 40%;">Question 1</p>
+    </div>
+    <p style="position: absolute; top: 10%; left: 6%;">Given points
+                                                       (x1,y1) and (x2,y2) select the formula to find the equation of the
+                                                       given line.</p>
+
+    <div style="left: 15%; width: 80%; float: left;">
+
+        <div
+                style="position: absolute; top: 40%; left: 7%; width: 25%; float: left">
+            <input type="radio" id="optionA" name="Question1" value="A"
+                   class="question1">
+            <math>
+
+                <mrow>
+                    <mi>y</mi>
+                    <mo>=</mo>
+                </mrow>
+                <mrow>
+                    <mi>mx</mi>
+                    <mo>+</mo>
+                    <mi>b</mi>
+                </mrow>
+            </math>
+            <br> <br> <input type="radio" id="optionC"
+                             name="Question1" value="C" class="question1">
+
+            <math>
+                <mrow>
+                    <mrow> <!--row 1 -->
+                        <mi>y</mi>
+                        <mo>-</mo>
+                        <msub>
+                            <mi>y</mi>
+                            <mn>1</mn>
+                        </msub>
+                    </mrow>
+                    <mo>=</mo>
+                    <mi>m</mi>
+
+                    <mrow> <!--row 2-->
+                        <mo>(</mo>
+                        <mi>x</mi>
+                        <mo>-</mo>
+                        <msub>
+                            <mi>x</mi>
+                            <mn>1</mn>
+                        </msub>
+                        <mo>)</mo>
+                    </mrow>
+                </mrow>
+            </math>
+        </div>
+
+
+        <div
+                style="position: absolute; top: 40%; right: 45%; width: 25%; float: right">
+            <input type="radio" id="optionB" name="Question1" value="B"
+                   class="question1">
+            <math>
+                <mrow>
+
+                    <mrow> <!--mrow 1-->
+                        <mo>(</mo>
+                        <mrow> <!--mrow2 -->
+                            <mi>x</mi>
+                            <mo>-</mo>
+                            <mi>h</mi>
+                        </mrow>
+                        <msup>
+                            <mo>)</mo>
+                            <mn>2</mn>
+                        </msup>
+                        <mo>+</mo>
+
+                        <mrow> <!-- row 3-->
+                            <mo>(</mo>
+                            <mrow> <!--mrow 4-->
+                                <mi>y</mi>
+                                <mo>-</mo>
+                                <mi>k</mi>
+                            </mrow>
+                            <msup>
+                                <mo>)</mo>
+                                <mn>2</mn>
+                            </msup>
+                        </mrow>
+                    </mrow>
+                    <mo>=</mo>
+                    <msup>
+                        <mi>r</mi>
+                        <mn>2</mn>
+                    </msup>
+                </mrow>
+            </math>
+
+            <br> <br> <input type="radio" id="optionD"
+                             name="Question1" value="D" class="question1">
+
+
+            <math>
+                <mrow>
+                    <mrow> <!--row 1 -->
+                        <mi>y</mi>
+                        <mo>-</mo>
+                        <msub>
+                            <mi>y</mi>
+                            <mn>2</mn>
+                        </msub>
+                    </mrow>
+                    <mo>=</mo>
+
+                    <mrow> <!-- row 2-->
+                        <mfrac>
+                            <mrow> <!-- row 3-->
+                                <msub>
+                                    <mi>y</mi>
+                                    <mn>2</mn>
+                                </msub>
+                                <mo>-</mo>
+                                <msub>
+                                    <mi>y</mi>
+                                    <mn>1</mn>
+                                </msub>
+                            </mrow>
+                            <mrow> <!-- row 4 -->
+                                <msub>
+                                    <mi>x</mi>
+                                    <mn>2</mn>
+                                </msub>
+                                <mo>-</mo>
+                                <msub>
+                                    <mi>x</mi>
+                                    <mn>1</mn>
+                                </msub>
+                            </mrow>
+                        </mfrac>
+                    </mrow>
+
+                    <mrow> <!-- row 5-->
+                        <mo>(</mo>
+                        <mi>x</mi>
+                        <mo>-</mo>
+                        <msub>
+                            <mi>x</mi>
+                            <mn>2</mn>
+                        </msub>
+                        <mo>)</mo>
+                    </mrow>
+                </mrow>
+            </math>
+        </div>
+
+        <br><br><br>
+
+        <div
+                style="position: absolute; top: 80%; left: 5%; width: 25%; float: left">
+            <button type="submit" style="width: 60%" value="Submit" onclick="mathquestion1()">Submit
+                                                                                              & Next Question
+            </button>
+        </div>
+
+
+        <div
+                style="position: absolute; top: 80%; right: 45%; width: 25%; float: right">
+            <button type="reset" style="width: 60%" value="Cancel" id="clear-button">Cancel
+                                                                   & Clear Question
+            </button>
+        </div>
+
+    </div>
+
+    <!-- svg-->
+    <div
+            style="position: absolute; right: 40%; top: 30%; width: 20%; float: right; marker-mid: url(#markerCircle)">
+        <svg height="210" width="500">
+
+            <line x1="200" y1="200" x2="200" y2="0"
+                  style="stroke:rgb(0,0,0);stroke-width:2"/>
+            <line x1="200" y1="200" x2="400" y2="200"
+                  style="stroke:rgb(0,0,0);stroke-width:2"/>
+            <line x1="200" y1="200" x2="400" y2="0"
+                  style="stroke:rgb(0,0,0);stroke-width:2"/>
+            <line x1="200" y1="0" x2="195" y2="10"
+                  style="stroke:rgb(0,0,0);stroke-width:2"/>
+            <line x1="200" y1="0" x2="205" y2="10"
+                  style="stroke:rgb(0,0,0);stroke-width:2"/>
+            <line x1="400" y1="200" x2="390" y2="195"
+                  style="stroke:rgb(0,0,0);stroke-width:2"/>
+            <line x1="400" y1="200" x2="390" y2="205"
+                  style="stroke:rgb(0,0,0);stroke-width:2"/>
+            <circle cx="350" cy="50" r="4" fill="red "/>
+            <circle cx="250" cy="150" r="4" fill="red "/>
+            <text x="360" y="70" style="fill:black;">(x2,y2)
+                <tspan x="260" y="160">(x1,y1)</tspan>
+            </text>
+
+        </svg>
+    </div>
+
+    <script>
+          document.getElementById('clear-button').addEventListener('click', function () {
+      ["optionA", "optionB", "optionC", "optionD"].forEach(function(id) {
+        document.getElementById(id).checked = false;
+      });
+      return false;
+    })
+
+
+
+        function mathquestion1() {
+            var optionA = document.getElementById("optionA");
+            var optionB = document.getElementById("optionB");
+            var optionC = document.getElementById("optionC");
+            var optionD = document.getElementById("optionD");
+            var answer;
+            if (optionD.checked) {
+                answer = optionD.value;
+            }
+            else if (optionA.checked) {
+                answer = optionA.value;
+            }
+            else if (optionB.checked) {
+                answer = optionB.value;
+            }
+            else if (optionC.checked) {
+                answer = optionC.value;
+            }
+            if (answer == "D") {
+                window.location.href = "MathQuestion2.html?points=" + 10;
+            }
+            else {
+                window.location.href = "MathQuestion2.html?points=" + 0;
+            }
+        }
+    </script>
+
+
+</div>
+</body>
+</html>

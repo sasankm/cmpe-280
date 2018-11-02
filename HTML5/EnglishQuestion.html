@@ -1,0 +1,88 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+</head>
+<body>
+<div
+        style="border: solid 1px; position: absolute; width: 800px; height: 400px; top: 50%; left: 20%; margin-top: -200px; margin-left: -100px;">
+    <div style="border: solid 0px; position: absolute; background-color: grey; width: 800px; height: 40px;">
+        <p style="position: absolute; top: -10%; left: 40%;">Question 3</p>
+    </div>
+
+    <div style="position: absolute; top: 10%; left: 2%; width: 380px;" onclick= "options1()">
+        As per the latest twitter news, complete the article snippet given by
+        selecting appropriate choices for the blanks. <br> <br> <br>
+        <input type="radio" name="radio3a" value="$650"><span>Option 1 Mark 1:$650</span> <br> <br>
+        <input type="radio" name="radio3a" value="$550"><span> Option 2 Mark 1:$550</span> <br> <br>
+        <input type="radio" name="radio3a" value="$650"><span> Option 3 Mark 1:$650</span> <br> <br>
+    </div>
+
+    <div style="position: absolute; top: 13%; left: 30%; width: 380px; display:none" id="radiobutton2" onclick = "options2()">
+        <br> <br> <br>
+        <input type="radio" name="radio3b" value="Twitter"><span> Option 1 Mark 2:Twitter</span> <br> <br>
+        <input type="radio" name="radio3b" value="Google"><span>Option 2 Mark 2:Google</span> <br> <br>
+        <input type="radio" name="radio3b" value="Facebook"><span> Option 3 Mark 2:Facebook</span> <br> <br>
+    </div>
+
+    <div style="position: absolute; top: 10%; left: 60%; width: 320px">
+        Twitter Wants more cash. The company announced two <span id="mark1" style="background-color: yellow">$______</span> million debt
+        offerings in a filing today, each with a potential $100 increase
+        provided that the sales are over subscribed. Assuming full tip,
+        including $100 million boosters, <span id="mark2" style="background-color: yellow">________</span> will raise up to
+        $1.5 billion with the two offerings.
+    </div>
+    <!-- Submit Button -->
+    <div style="position: absolute; top: 60%; left: 5%; width: 25%; float: left" style="width: 60%">
+        <button type="submit" style="width: 60%" value="Submit" onclick="videoquestion()">Submit
+                                                                                          & Next Question</button>
+    </div>
+
+    <!-- Cancel Button -->
+    <div style="position: absolute; top: 60%; right: 35%; width: 25%; float: right">
+        <button type="reset" style="width: 60%" value="Cancel">Cancel
+                                                               & Clear Question</button>
+    </div>
+
+    <script>
+        var ans1;
+        var ans2;
+        function options1(){
+            ans1 =document.querySelector('input[name="radio3a"]:checked').value;
+            if(ans1=="$650"){
+                document.getElementById("mark1").innerHTML=ans1;
+            }
+
+            document.getElementById("mark1").innerHTML=ans1;
+            document.getElementById("radiobutton2").style.display="block";
+
+        }
+        function options2(){
+            ans2=document.querySelector('input[name="radio3b"]:checked').value;
+            if(ans2=="Twitter"){
+                document.getElementById("mark2").innerHTML=ans2;
+            }
+
+            document.getElementById("mark2").innerHTML=ans2;
+
+        }
+        function videoquestion(){
+
+            var abc = window.location.href;
+            var points = parseInt(abc.substring(abc.indexOf("=") + 1));
+            console.log(points);
+            if(ans1=="$650" && ans2=="Twitter"){
+
+                window.location.href = "VidQuestion.html?points="+points+","+10;
+            }
+            else{
+                window.location.href = "VidQuestion.html?points="+points+","+0;
+            }
+
+        }
+
+    </script>
+
+</div>
+</body>
+</html>

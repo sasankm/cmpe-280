@@ -1,0 +1,230 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <script src="http://fred-wang.github.io/mathml.css/mspace.js"></script>
+</head>
+<body>
+<div
+        style="border: solid 1px; position: absolute; width: 1000px; height: 500px; top: 50%; left: 20%; margin-top: -200px; margin-left: -100px;">
+
+    <div
+            style="border: solid 0px; position: absolute; background-color: grey; width: 1000px; height: 40px;">
+        <p style="position: absolute; top: -10%; left: 40%;">Question 2</p>
+    </div>
+
+
+    <p style="position: absolute; top: 10%; left: 6%;">Select the
+                                                       Cosine theorem formula</p>
+
+    <div
+            style="position: absolute; top: 30%; left: 5%; width: 35%; float: left">
+        <input type="radio" id="optionA" name="Question 2" value="A">
+        <math>
+            <mrow>
+                <mi>cos</mi>
+                <mrow> <!--row 1 -->
+                    <mo>(</mo>
+                    <mn>&alpha;</mn>
+                    <mo>&PlusMinus;</mo>
+                    <mn>&beta;</mn>
+                    <mo>)</mo>
+                </mrow>
+                <mo>=</mo>
+                <mrow> <!-- row 2-->
+                    <mi>cos</mi>
+                    <mn>&alpha;</mn>
+                </mrow>
+                <mrow>
+                    <mi>cos</mi>
+                    <mn>&beta;</mn>
+                </mrow>
+                <mo>&MinusPlus;</mo>
+                <mrow>
+                    <mi>sin</mi>
+                    <mn>&alpha;</mn>
+                </mrow>
+                <mrow>
+                    <mi>sin</mi>
+                    <mn>&beta;</mn>
+                </mrow>
+            </mrow>
+        </math>
+        <br> <br> <input type="radio" id="optionC"
+                         name="Question 2" value="C">
+        <math>
+            <mrow> <!--mrow 1-->
+                <mi>sin</mi>
+                <mn>&alpha;</mn>
+                <mo>+</mo>
+                <mi>sin</mi>
+                <mn>&beta;</mn>
+            </mrow>
+            <mo>=</mo>
+            <mn>2</mn>
+            <mrow> <!--mrow2-->
+                <mi>sin</mi>
+                <mo>(</mo>
+                <mfrac>
+                    <mrow>
+                        <mn>&alpha;</mn>
+                        <mo>+</mo>
+                        <mn>&beta;</mn>
+                    </mrow>
+                    <mrow>
+                        <mn>2</mn>
+                    </mrow>
+                </mfrac>
+                <mo>)</mo>
+                <mrow>
+                    <mi>cos</mi>
+                    <mo>(</mo>
+                    <mfrac>
+                        <mrow>
+                            <mn>&alpha;</mn>
+                            <mo>-</mo>
+                            <mn>&beta;</mn>
+                        </mrow>
+                        <mrow>
+                            <mn>2</mn>
+                        </mrow>
+                    </mfrac>
+                    <mo>)</mo>
+                </mrow>
+            </mrow>
+        </math>
+
+        <br> <br>
+    </div>
+
+
+    <div style="position:absolute; top: 30%; left: 50%; float: left">
+        <input type="radio" id="optionB" name="Question 2" value="B">
+        <math>
+            <mrow>
+                <mi>sin</mi>
+                <mrow> <!--row 1 -->
+                    <mo>(</mo>
+                    <mn>&alpha;</mn>
+                    <mo>&PlusMinus;</mo>
+                    <mn>&beta;</mn>
+                    <mo>)</mo>
+                </mrow>
+                <mo>=</mo>
+                <mrow> <!-- row 2-->
+                    <mi>sin</mi>
+                    <mn>&alpha;</mn>
+                </mrow>
+                <mrow>
+                    <mi>cos</mi>
+                    <mn>&beta;</mn>
+                </mrow>
+                <mo>&PlusMinus;</mo>
+                <mrow>
+                    <mi>cos</mi>
+                    <mn>&alpha;</mn>
+                </mrow>
+                <mrow>
+                    <mi>sin</mi>
+                    <mn>&beta;</mn>
+                </mrow>
+            </mrow>
+        </math>
+        <br>
+        <br> <input type="radio" id="optionD" name="Question 2"
+                    value="D">
+        <math>
+            <mrow> <!--mrow 1-->
+                <mi>sin</mi>
+                <mn>&alpha;</mn>
+                <mo>-</mo>
+                <mi>sin</mi>
+                <mn>&beta;</mn>
+            </mrow>
+            <mo>=</mo>
+            <mn>2</mn>
+            <mrow> <!--mrow2-->
+                <mi>cos</mi>
+                <mo>(</mo>
+                <mfrac>
+                    <mrow>
+                        <mn>&alpha;</mn>
+                        <mo>+</mo>
+                        <mn>&beta;</mn>
+                    </mrow>
+                    <mrow>
+                        <mn>2</mn>
+                    </mrow>
+                </mfrac>
+                <mo>)</mo>
+                <mrow>
+                    <mi>sin</mi>
+                    <mo>(</mo>
+                    <mfrac>
+                        <mrow>
+                            <mn>&alpha;</mn>
+                            <mo>-</mo>
+                            <mn>&beta;</mn>
+                        </mrow>
+                        <mrow>
+                            <mn>2</mn>
+                        </mrow>
+                    </mfrac>
+                    <mo>)</mo>
+                </mrow>
+            </mrow>
+        </math>
+    </div>
+
+    <div
+            style="position: absolute; top: 65%; left: 35%; width: 25%; float: left" style="width: 60%">
+        <button type="submit" value="Submit" style="width: 60%"
+                onclick="EnglishQuestion()">Submit & Next Question</button>
+    </div>
+
+    <div
+            style="position: absolute; top: 65%; right: 19%; width: 25%; float: right">
+        <button type="reset" value="Cancel" style="width: 60%" id="clear-button">Cancel & Clear Question</button>
+    </div>
+    <script>
+
+          document.getElementById('clear-button').addEventListener('click', function () {
+      ["optionA", "optionB", "optionC", "optionD"].forEach(function(id) {
+        document.getElementById(id).checked = false;
+      });
+      return false;
+    })
+
+        function EnglishQuestion() {
+            var optionA = document.getElementById("optionA");
+            var optionB = document.getElementById("optionB");
+            var optionC = document.getElementById("optionC");
+            var optionD = document.getElementById("optionD");
+            var answer2;
+            if (optionA.checked) {
+                answer2 = optionA.value;
+            }
+            else if (optionB.checked) {
+                answer2 = optionB.value;
+            }
+            else if (optionC.checked) {
+                answer2 = optionC.value;
+            }
+            else if (optionD.checked) {
+                answer2 = optionD.value;
+            }
+            var abc = window.location.href;
+            var points = parseInt(abc.substring(abc.indexOf("=") + 1));
+            if (answer2 == "A") {
+                window.location.href = "EnglishQuestion.html?points="
+                    + (points + 10);
+            }
+            else if (answer2 == "B" || answer2 == "C"
+                || answer2 == "D") {
+                window.location.href = "EnglishQuestion.html?points="
+                    + points;
+            }
+        }
+    </script>
+</div>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<html>
+<head>
+    <title>Score Card</title>
+</head>
+
+<body>
+<div style="border: solid 1px; position: absolute; width: 800px; height: 500px; top: 50%; left: 20%; margin-top: -200px; margin-left: -100px;">
+    <div style="border: solid 0px; position: absolute; background-color: grey; width: 800px; height: 40px;">
+        <p style="position: absolute; top: -10%; left: 45%;">Score Card</p>
+    </div>
+    <div onclick="scorecard()" style="border: solid 1px; position: absolute; width: 700px; height: 300px; top: 55%; left:18%; margin-top: -200px; margin-left: -100px;">
+        <details open>
+            <summary>Quantitative Section</summary>
+            <p><b>Number of Questions Answered: 2<br>
+                  Number of Correct Answered: <span id="A"></span><br>
+                  Score: <span id="B"></span><br></b></p>
+        </details>
+        <details>
+            <summary>Reading Section</summary>
+            <p><b>Number of Questions Answered: 1<br>
+                  Number of Correct Answered: <span id="C"></span><br>
+                  Score: <span id="D"></span><br></b></p>
+        </details>
+        <details>
+            <summary>Audio/Video Section</summary>
+            <p><b>Number of Questions Answered: 1<br>
+                  Number of Correct Answered: <span id="E"></span><br>
+                  Score: <span id="F"></span><br></b></p>
+        </details> <br>
+    </div>
+    <script>
+        var url = window.location.href;
+        var points = (url.substring(url.indexOf("=") + 1));
+        var score = points.split(",");
+
+        function scorecard() {
+            document.getElementById("A").innerHTML = score[0] / 10;
+            document.getElementById("B").innerHTML = score[0];
+            document.getElementById("C").innerHTML = score[1] / 10;
+            document.getElementById("D").innerHTML = score[1];
+            document.getElementById("E").innerHTML = score[2] / 10;
+            document.getElementById("F").innerHTML = score[2];
+        }
+        function signout() {
+            window.location.href = "login.html";
+        }
+    </script>
+    <p style="position: absolute; top: 75%; right: 40%"><b>Thank You!!</b></p>
+    <div style="position:absolute;top:85%;left:47%;width:25%;">
+        <button type="submit" value="Submit" style="width: 50%" onclick="signout()">Finish</button>
+    </div>
+
+</div>
+</body>
+</html>

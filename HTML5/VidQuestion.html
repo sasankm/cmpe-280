@@ -1,0 +1,104 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+</head>
+<body>
+<div
+        style="border: solid 1px; position: absolute; width: 800px; height: 500px; top: 50%; left: 20%; margin-top: -200px; margin-left: -100px;">
+    <div
+            style="border: solid 0px; position: absolute; background-color: grey; width: 800px; height: 40px;">
+        <p style="position: absolute; top: -10%; left: 40%;">Question 4</p>
+    </div>
+    <p style="position: absolute; top: 10%; left: 6%;">Watch the video
+                                                       and answer the following question.</p>
+    <p style="position: absolute; top: 14%; left: 6%;">What is the
+                                                       resource as mentioned in the video?</p>
+    <div style="left: 15%; width: 80%; float: left;">
+
+        <div
+                style="position: absolute; top: 30%; left: 8%; width: 25%; float: left">
+            <input type="radio" id="optionA" name="Question1" value="A">NASA.gov<br>
+            <br> <br> <br> <br> <input type="radio"
+                                       id="optionC" name="Question1" value="C">Facebook<br>
+        </div>
+
+
+        <div
+                style="position: absolute; top: 29%; right: 40%; width: 25%; float: right">
+            <input type="radio" id="optionB" name="Question1" value="B">Data.gov<br>
+            <br> <br> <br> <br> <input type="radio"
+                                       id="optionD" name="Question1" value="D">XYZ.net<br>
+
+        </div>
+
+        <div
+                style="position: absolute; top: 65%; left: 5%; width: 25%; float: left">
+            <button type="submit" style="width: 60%" onclick="video()" value="Submit">Submit
+                                                                                      & Next Question</button>
+        </div>
+
+        <div
+                style="position: absolute; top: 65%; right: 45%; width: 25%; float: right">
+            <button type="reset" style="width: 60%"  onclick="clear()" value="Cancel" id='clear-button'>Cancel
+                                                                    & Clear Question</button>
+        </div>
+
+    </div>
+
+    <div style="position: absolute; top: 25%; left: 400px">
+        <iframe width="350" height="200"
+                src="https://www.youtube.com/embed/jXMZmEOGLRc" frameborder="0"
+                allowfullscreen></iframe>
+        <p style="font-size: 9px; position: absolute; top: 110%; left: 30%">Video
+                                                                            Source:https://www.youtube.com/embed/jXMZmEOGLRc</p>
+    </div>
+    <script>
+
+         document.getElementById('clear-button').addEventListener('click', function () {
+      ["optionA", "optionB", "optionC", "optionD"].forEach(function(id) {
+        document.getElementById(id).checked = false;
+      });
+      return false;
+    })
+
+
+
+        function video() {
+            var optionA = document.getElementById("optionA");
+            var optionB = document.getElementById("optionB");
+            var optionC = document.getElementById("optionC");
+            var optionD = document.getElementById("optionD");
+            var correctans;
+            if (optionA.checked) {
+                correctans = optionA.value;
+            }
+            else if (optionB.checked) {
+                sessionStorage.setItem('points', 0);
+                correctans = optionB.value;
+            }
+            else if (optionC.checked) {
+                sessionStorage.setItem('points', 0);
+                correctans = optionC.value;
+            }
+            else if (optionD.checked) {
+                sessionStorage.setItem('points', 0);
+                correctans = optionD.value;
+            }
+            var abc = window.location.href;
+            var points = abc.substring(abc.indexOf("=") + 1);
+            if (correctans == "A") {
+                window.location.href = "SurveyPage.html?points=" + points
+                    + "," + 10;
+            }
+            else if (correctans == "B" || correctans == "C"
+                || correctans == "D") {
+                window.location.href = "SurveyPage.html?points=" + points
+                    + "," + 0;
+            }
+        }
+    </script>
+
+</div>
+
+</body>
+</html>
